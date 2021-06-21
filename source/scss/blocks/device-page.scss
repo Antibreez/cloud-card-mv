@@ -1,0 +1,46 @@
+.device-page {
+  &__wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-right: 11px;
+  }
+
+  &__title {
+    @include font(30px, 36px, 500);
+    color: $text-main;
+    margin: 0 0 16px;
+  }
+
+  &__desc {
+    @include font(24px, 29px, 500);
+    color: $text-main;
+    margin: 0 0 50px;
+  }
+
+  &__title-actions {
+    display: none;
+  }
+
+  &__info-block {
+    display: flex;
+    padding-bottom: 75px;
+  }
+
+  &__gallery {
+    margin-right: auto;
+  }
+
+  &__chars {
+    display: flex;
+    width: 770px;
+    justify-content: space-between;
+  }
+}
+
+@media(max-width: 599px) {
+  .device-page {
+    &__wrapper {
+      padding: 0 15px;
+    }
+  }
+}

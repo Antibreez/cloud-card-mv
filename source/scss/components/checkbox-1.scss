@@ -1,0 +1,87 @@
+.checkbox-1 {
+  position: relative;
+  display: block;
+  padding: 15px;
+  padding-right: 54px;
+  border: 1px solid $bg;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    border-color: $stroke;
+  }
+
+  &:hover .checkbox-1__name {
+    color: $text-main;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+    margin-bottom: 5px;
+    color: $text-minor;
+    transition: color 0.3s;
+  }
+
+  &__desc {
+    @include b12;
+    margin: 0;
+    color: $text-minor;
+  }
+
+  &__label {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: $bg;
+  }
+
+  &__input:checked + div {
+    background-color: $primary;
+    background-image: url("../img/check-white.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__input:checked + div + .checkbox-1__name {
+    color: $text-main;
+  }
+
+  &.sended {
+    border: none;
+    background-color: $bg;
+
+    &:hover {
+      cursor: default;
+    }
+
+    & .checkbox-1__name {
+      color: $text-main;
+    }
+
+    & input,
+    & .checkbox-1__label {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-image: url("../img/check.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}

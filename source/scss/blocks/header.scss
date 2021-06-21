@@ -1,0 +1,10 @@
+.header {
+  padding-top: 75px;
+  margin-bottom: 40px;
+}
+
+@include mobile {
+  .header {
+    padding-top: 50px;
+  }
+}

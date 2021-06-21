@@ -1,0 +1,414 @@
+.device-details {
+  padding-bottom: 75px;
+
+  &__tabs {
+    background-color: #f5f5f5;
+  }
+
+  &__tab {
+    @include btn-reset;
+    @include font(16px, 18px);
+    color: $text-minor;
+    padding: 15px 15px 14px;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.active {
+      color: $primary;
+      border-color: $primary;
+    }
+  }
+
+  &__content {
+    max-width: 770px;
+    padding-top: 50px;
+  }
+
+  &__desc-title {
+    @include font(24px, 29px, 500);
+    color: $text-main;
+    margin: 0 0 24px;
+  }
+
+  &__payment-sum {
+    padding: 24px;
+    margin: 0 0 48px;
+    background-color: #f7f7f7;
+    border-radius: 15px;
+  }
+
+  &__payment-sum-title {
+    @include font(24px, 29px, 500);
+    color: $text-main;
+    margin: 0 0 16px;
+  }
+
+  &__payment-sum-desc {
+    @include font(16px, 23px, 400);
+    color: $text-minor;
+    margin: 0 0 16px;
+  }
+
+  &__sum-item-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__sum-subtitle {
+    @include font(18px, 22px, 500);
+    color: $text-minor;
+    margin: 0 0 8px;
+  }
+
+  &__sum-value {
+    @include font(24px, 29px, 500);
+    color: $text-main;
+    margin: 0;
+  }
+
+  &__sum-devide {
+    @include font(18px, 22px, 500);
+    color: #fb0000;
+    margin: 0 24px;
+  }
+
+  &__stages {
+    margin: 0;
+    padding: 0;
+    max-width: 730px;
+    counter-reset: stages-list;
+    margin: 0 0 48px;
+  }
+
+  &__stages-item {
+    @include font(16px, 23px);
+    color: $text-minor;
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &::before {
+      @include font(15px, 18px);
+      content: counter(stages-list);
+      counter-increment: stages-list;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: $primary;
+      flex-shrink: 0;
+      color: #fff;
+      margin-right: 15px;
+    }
+  }
+
+  &__subtitle {
+    @include font(18px, 22px, 500);
+    margin: 0 0 24px;
+  }
+
+  &__equipment {
+    margin: 0 0 48px;
+  }
+
+  &__equipment-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__equipment-item {
+    @include font(16px, 23px);
+    color: $text-minor;
+    padding-left: 23px;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $primary;
+    }
+  }
+
+  &__consist {
+    margin: 0 0 32px;
+  }
+
+  &__consist-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__consist-item {
+    @include font(14px, 22px);
+    color: $text-minor;
+    padding: 23px 23px 23px 23px;
+    border-radius: 10px;
+    border: 1px solid $bg-hover;
+    width: calc((100% - 16px) / 2);
+    min-height: 136px;
+    margin-bottom: 16px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: right -65px center;
+
+    span {
+      display: inline-block;
+      max-width: 64%;
+    }
+
+    &--app {
+      background-image: url("../img/app-control.jpg");
+      //background-position: right -50px center;
+    }
+
+    &--diagnostics {
+      background-image: url("../img/diagnostics.jpg");
+      //background-position: right -50px center;
+    }
+
+    &--support {
+      background-image: url("../img/support.jpg");
+    }
+
+    &--warranty {
+      background-image: url("../img/warranty.jpg");
+      //background-position: right -5px center;
+    }
+
+    &--account {
+      background-image: url("../img/account.jpg");
+      background-position: right -100px center;
+      background-size: auto 100%;
+    }
+
+    &--alert {
+      background-image: url("../img/alert-bg.jpg");
+      background-position: right -90px center;
+      background-size: auto 158px;
+      background-color: #f5f5f5;
+      border-color: #f5f5f5;
+    }
+  }
+
+  &__about-block {
+    position: relative;
+    margin-top: 5px;
+  }
+
+  &__about-btn {
+    line-height: 22px;
+  }
+
+  &__payment-desc {
+    @include font(16px, 23px);
+    color: $text-minor;
+    margin: 0 0 24px;
+
+    .link {
+      font-weight: 400;
+    }
+  }
+
+  &__payment-card-block {
+    // display: flex;
+    // justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__payment-card {
+    width: 100%;
+    padding: 24px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &--1-year {
+      background-image: url("../img/1-year-bg.jpg");
+    }
+
+    &--unlimit {
+      background-image: url("../img/unlimit-bg.jpg");
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__payment-card-title {
+    @include font(18px, 22px, 600);
+    color: $text-main;
+    margin: 0 0 16px;
+  }
+
+  &__payment-card-desc {
+    @include font(14px, 23px);
+    color: $text-minor;
+    margin: 0;
+  }
+}
+
+// @include tablet {
+//   .device-details {
+//     &__consist-item {
+//       padding-right: 142px;
+//       background-position: right -90px center;
+
+//       &--support {
+//         background-position: right -60px center;
+//       }
+
+//       &--warranty {
+//         background-position: right -60px center;
+//       }
+
+//       &--account {
+//         background-position: right -70px center;
+//       }
+
+//       &--alert {
+//         padding-right: 112px;
+//         background-position: right -60px center;
+//       }
+//     }
+
+//     &__payment-card {
+//       background-position: center;
+//     }
+//   }
+// }
+
+@media(max-width: 599px) {
+  .device-details {
+    padding-bottom: 26px;
+
+    &__desc-title {
+      @include font(18px, 22px, 500);
+    }
+
+    &__subtitle {
+      @include font(16px, 19px, 500);
+    }
+
+    &__stages {
+      margin: 0 0 36px;
+    }
+
+    &__payment-sum {
+      padding: 16px;
+      margin: 0 0 36px;
+    }
+
+    &__payment-sum-title {
+      @include font(18px, 22px, 500);
+    }
+
+    &__sum-item-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__sum-subtitle {
+      @include font(16px, 19px, 500);
+    }
+
+    &__sum-value {
+      @include font(18px, 22px, 500);
+    }
+
+    &__sum-devide {
+      @include font(16px, 19px, 500);
+      margin: 16px 0;
+    }
+
+    &__payment-card-block {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__payment-card {
+      width: 100%;
+      padding: 16px;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    &__equipment {
+      margin: 0 0 36px;
+    }
+
+    &__consist {
+      margin: 0 0 20px;
+    }
+
+    &__consist-list {
+      max-width: 400px;
+    }
+
+    &__consist-item {
+      width: 100%;
+      padding: 16px;
+      background-position: right -85px center;
+
+      span {
+        max-width: 78%;
+      }
+
+      &--alert {
+        background-size: auto 100%;
+      }
+    }
+  }
+}
+
+// @media (max-width: 700px) {
+//   .device-details {
+//     &__consist-list {
+//       flex-direction: column;
+//     }
+
+//     &__consist-item {
+//       width: 100%;
+//       max-width: 350px;
+//       min-height: 136px;
+//       padding: 16px 68px 16px 16px;
+//       background-position: right -90px center;
+
+//       span {
+//         display: inline-block;
+//         max-width: 200px;
+//       }
+
+//       &--app {
+//         background-position: right -100px center;
+//       }
+
+//       &--alert {
+//         background-position: right -80px center;
+//       }
+//     }
+//   }
+// }

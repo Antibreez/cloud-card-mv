@@ -1,0 +1,186 @@
+.payment-card {
+  width: 370px;
+  margin-left: auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+
+  &__title {
+    @include font(12px, 19px, 500);
+    color: $text-main;
+    margin: 0 0 4px;
+  }
+
+  &__subtitle {
+    @include font(12px, 16px);
+    color: $text-minor;
+    margin: 0 0 5px;
+  }
+
+  &__sum-block {
+    .payment-card__status {
+      display: none;
+    }
+  }
+
+  &__sum-item {
+    &:first-of-type {
+      margin: 0 0 16px;
+    }
+
+    &:nth-of-type(2) {
+      margin: 0 0 21px;
+    }
+  }
+
+  &__sum-devide {
+    @include font(12px, 15px);
+    color: #fb0000;
+    margin: 0 16px 0 20px;
+  }
+
+  &__sum-item-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__current-sum {
+    @include font(31px, 37px, 500);
+    color: $text-main;
+    margin: 0;
+  }
+
+  &__year-sum {
+    @include font(14px, 18px, 500);
+    color: $text-main;
+    margin: 0;
+  }
+
+  &__desc {
+    margin: 0 0 24px;
+  }
+
+  &__desc-alert {
+    @include font(0, 0);
+    display: inline-block;
+    margin: 0 0 10px;
+  }
+
+  &__desc-text {
+    @include font(14px, 19px);
+    color: $text-minor;
+    margin: 0 0 8px;
+  }
+
+  &__status {
+    @include font(12px, 19px);
+    color: $text-minor;
+    padding-left: 15px;
+    position: relative;
+    margin: 0 0 24px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.in-stock::before {
+      background-color: $success;
+    }
+  }
+
+  &__checkbox {
+    color: $text-main;
+    margin: 0 0 24px;
+
+    .checkbox__label {
+      align-items: center;
+    }
+  }
+
+  &__to-cart {
+    width: 100%;
+  }
+}
+
+@include tablet-only {
+  .payment-card {
+    width: 100%;
+    max-width: 770px;
+    margin: 0 auto 0 0;
+
+    &__sum-block {
+      display: flex;
+      margin-bottom: 24px;
+
+      .payment-card__status {
+        display: block;
+        margin-left: auto;
+        margin-left: 48px;
+      }
+    }
+
+    &__sum-item {
+      &:first-of-type {
+        margin: 0 36px 0 0;
+      }
+
+      &:nth-of-type(2) {
+        margin: 0;
+      }
+    }
+
+    &__desc {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__desc-alert {
+      flex-shrink: 0;
+      margin-right: 12px;
+    }
+
+    &__desc-text {
+      width: calc(100% - 34px);
+    }
+
+    &__desc-link {
+      margin-left: 34px;
+    }
+
+    &__status {
+      display: none;
+    }
+  }
+}
+
+@include mobile {
+  .payment-card {
+    padding: 24px;
+    width: 100%;
+
+    &__sum-item-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__sum-devide {
+      margin: 8px 0;
+    }
+
+    &__sum-item {
+      &:last-child {
+        .payment-card__title {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}

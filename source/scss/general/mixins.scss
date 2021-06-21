@@ -1,0 +1,178 @@
+//РАЗРЕШЕНИЯ
+
+// Меньше 1280
+@mixin tablet {
+  @media (max-width: $width-desktop - 1px) {
+    @content;
+  }
+}
+
+// Меньше 1280 и больше 767
+@mixin tablet-only {
+  @media (max-width: $width-desktop - 1px) and (min-width: $width-tablet) {
+    @content;
+  }
+}
+
+// Меньше 768
+@mixin mobile {
+  @media (max-width: $width-tablet - 1px) {
+    @content;
+  }
+}
+
+// СБРОС СТИЛЕЙ
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin btn-reset {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  border: none;
+  background-color: transparent;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+// ШРИФТЫ
+@mixin font-face($name, $filename, $weight) {
+  @font-face {
+    font-family: $name;
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/'+$filename+'.eot'); /* IE9 Compat Modes */
+    src: local(''),
+      url('../fonts/'+$filename+'.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('../fonts/'+$filename+'.woff') format('woff'), /* Modern Browsers */
+      url('../fonts/'+$filename+'.ttf') format('truetype'), /* Safari, Android, iOS */
+      url('../fonts/'+$filename+'.svg#PlayfairDisplay') format('svg'); /* Legacy iOS */
+  }
+}
+
+// РЕТИНА
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+//ПЛАНВНЫЙ ХОВЕР
+@mixin transition($duration: 0.2s) {
+  transition: all $duration ease;
+}
+
+// ШРИФТЫ
+@mixin h48 {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 58px;
+}
+
+@mixin h36 {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 43px;
+}
+
+@mixin h32 {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+@mixin h24 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+@mixin h20 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin h18 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@mixin b16 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin b15 {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 23px;
+}
+
+@mixin b14 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+@mixin b12 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+@mixin font($font-size, $lin-height, $font-weight: 400) {
+  font-size: $font-size;
+  line-height: $lin-height;
+  font-weight: $font-weight;
+}
+
+//============================
+
+@mixin section-title {
+  @include h32;
+  color: $text-main;
+  margin: 0;
+}
+
+
+@mixin overflow-3lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  //display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  box-orient: vertical;
+}
+
+
+@mixin overflow-10lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  //display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  line-clamp: 10;
+  box-orient: vertical;
+}

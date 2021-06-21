@@ -1,0 +1,145 @@
+.device-chars {
+  width: 370px;
+  flex-shrink: 0;
+
+  &__actions {
+    display: flex;
+    margin-bottom: 24px;
+  }
+
+  &__action-btn {
+    @include btn-reset;
+    color: $text-minor;
+    transition: color 0.3s;
+
+    &:first-child {
+      margin-right: 25px;
+    }
+
+    &:hover {
+      color: $primary;
+      cursor: pointer;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 7px;
+    }
+
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  &__title {
+    @include font(15px, 18px, 500);
+    color: $text-main;
+    margin: 0 0 10px;
+  }
+
+  &__square {
+    margin-bottom: 9px;
+  }
+
+  &__square-btns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__square-btn {
+    @include btn-reset;
+    @include font(14px, 18px, 500);
+    color: $text-minor;
+    padding: 15px 23px;
+    border-radius: 5px;
+    background-color: $bg;
+    border: 1px solid $bg;
+    transition: all 0.3s;
+    margin-bottom: 15px;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &:hover {
+      background-color: $bg-hover;
+      cursor: pointer;
+    }
+
+    &.active {
+      border-color: $primary;
+      color: $primary;
+      background-color: #fff;
+    }
+  }
+
+  &__details-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__details-item {
+    @include font(12px, 19px);
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    span {
+      white-space: nowrap;
+
+      &:first-child {
+        color: $text-minor;
+      }
+
+      &:nth-child(2) {
+        position: relative;
+        flex-grow: 1;
+        height: 10px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 10px;
+          width: calc(100% - 20px);
+          height: 100%;
+          border-bottom: 1px dotted $text-minor;
+
+        }
+      }
+
+      &:last-child {
+        color: $text-main;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .device-chars {
+    width: 340px;
+  }
+}
+
+@include mobile {
+  .device-chars {
+    width: 100%;
+
+    &__actions {
+      display: none;
+    }
+
+    &__title {
+      @include font(14px, 18px, 500);
+    }
+
+    &__square-btn {
+      padding: 15px 21px;
+    }
+  }
+}

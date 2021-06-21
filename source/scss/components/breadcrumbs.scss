@@ -1,0 +1,75 @@
+.breadcrumbs {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 23px;
+    z-index: 10;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  }
+
+  .swiper-slide {
+    width: min-content;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: min-content;
+  }
+
+  &__item {
+    @include b15;
+    color: $text-minor;
+    white-space: nowrap;
+
+    &:not(:last-child) {
+      flex-shrink: 0;
+
+      &::after {
+        content: "/";
+        padding: 0 10px;
+      }
+    }
+  }
+
+  &__link {
+    @include link-reset;
+    transition: all 0.3s;
+
+    &--active {
+      color: $primary;
+    }
+  }
+
+  &__link[href] {
+    &:hover,
+    &:focus {
+      color: $primary;
+    }
+  }
+}
+
+@include mobile {
+  .breadcrumbs {
+    &::before,
+    &::after {
+      width: 15px;
+    }
+  }
+}
