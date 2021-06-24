@@ -1,5 +1,5 @@
 .device-details {
-  padding-bottom: 75px;
+  padding-bottom: 0;
 
   &__tabs {
     background-color: #f5f5f5;
@@ -24,7 +24,7 @@
 
   &__content {
     max-width: 770px;
-    padding-top: 50px;
+    padding-top: 0;
   }
 
   &__desc-title {
@@ -46,7 +46,7 @@
     margin: 0 0 16px;
   }
 
-  &__payment-sum-desc {
+  p.device-details__payment-sum-desc {
     @include font(16px, 23px, 400);
     color: $text-minor;
     margin: 0 0 16px;
@@ -57,19 +57,19 @@
     align-items: center;
   }
 
-  &__sum-subtitle {
+  p.device-details__sum-subtitle {
     @include font(18px, 22px, 500);
     color: $text-minor;
     margin: 0 0 8px;
   }
 
-  &__sum-value {
+  p.device-details__sum-value {
     @include font(24px, 29px, 500);
     color: $text-main;
     margin: 0;
   }
 
-  &__sum-devide {
+  p.device-details__sum-devide {
     @include font(18px, 22px, 500);
     color: #fb0000;
     margin: 0 24px;
@@ -218,7 +218,7 @@
     line-height: 22px;
   }
 
-  &__payment-desc {
+  p.device-details__payment-desc {
     @include font(16px, 23px);
     color: $text-minor;
     margin: 0 0 24px;
@@ -262,7 +262,7 @@
     margin: 0 0 16px;
   }
 
-  &__payment-card-desc {
+  p.device-details__payment-card-desc {
     @include font(14px, 23px);
     color: $text-minor;
     margin: 0;
@@ -301,7 +301,7 @@
 
 @media(max-width: 599px) {
   .device-details {
-    padding-bottom: 26px;
+    padding-bottom: 0;
 
     &__desc-title {
       @include font(18px, 22px, 500);
@@ -329,15 +329,15 @@
       align-items: flex-start;
     }
 
-    &__sum-subtitle {
+    p.device-details__sum-subtitle {
       @include font(16px, 19px, 500);
     }
 
-    &__sum-value {
+    p.device-details__sum-value {
       @include font(18px, 22px, 500);
     }
 
-    &__sum-devide {
+    p.device-details__sum-devide {
       @include font(16px, 19px, 500);
       margin: 16px 0;
     }
@@ -383,32 +383,3 @@
     }
   }
 }
-
-// @media (max-width: 700px) {
-//   .device-details {
-//     &__consist-list {
-//       flex-direction: column;
-//     }
-
-//     &__consist-item {
-//       width: 100%;
-//       max-width: 350px;
-//       min-height: 136px;
-//       padding: 16px 68px 16px 16px;
-//       background-position: right -90px center;
-
-//       span {
-//         display: inline-block;
-//         max-width: 200px;
-//       }
-
-//       &--app {
-//         background-position: right -100px center;
-//       }
-
-//       &--alert {
-//         background-position: right -80px center;
-//       }
-//     }
-//   }
-// }
